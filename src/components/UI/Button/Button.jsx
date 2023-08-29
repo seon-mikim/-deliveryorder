@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import classes from'./Button.module.css'
+const Button = ({ name, className, onClick }) => {
+	const handleClick = () => {
+		onClick()
+	}
+	return <button onClick={handleClick } className={classes[className] }>{name}</button>;
+};
 
-const Button = () => {
-	return (
-		<div>Button</div>
-	)
-}
-
-export default Button
+export default Button;
