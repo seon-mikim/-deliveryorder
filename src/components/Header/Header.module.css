@@ -1,0 +1,7 @@
+.delivery-header{
+	margin: 2rem;
+	.header__text {
+		font-size: 2rem;
+		color: #252525
+	}
+}

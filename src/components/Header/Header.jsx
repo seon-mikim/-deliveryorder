@@ -1,9 +1,9 @@
-import './Header.css'
+import classes from './Header.module.css'
 
 const Header = () => {
 	return (
-		<header className='header'>
-			<h1 className='header__text'>Delivery Order</h1>
+		<header className={classes['delivery-header'] }>
+			<h1 className={classes['header__text'] }>Delivery Order</h1>
 		</header>
 	)
 }
