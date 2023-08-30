@@ -1,7 +1,10 @@
-.delivery-header{
-	margin: 2rem;
-	.header__text {
-		font-size: 2rem;
-		color: #252525
-	}
+.delivery-header {
+  margin: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .header__text {
+    font-size: 2rem;
+    color: #252525;
+  }
 }
