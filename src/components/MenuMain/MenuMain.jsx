@@ -1,8 +1,8 @@
 import MenuList from '@components/MenuList/MenuList'
-
+import classes from './MenuMain.module.css'
 const MenuMain = () => {
 	return (
-		<main>
+		<main className={classes['main']}>
 			<MenuList/>
 		</main>
 	)
