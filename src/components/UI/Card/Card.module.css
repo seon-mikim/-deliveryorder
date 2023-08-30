@@ -1,0 +1,27 @@
+.menu-item {
+  width: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 50px;
+  padding: 10px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    border-bottom: 2px solid #c0c0c051;
+  }
+  .menu-item__img-wrap {
+    width: 100px;
+    height: 100px;
+		> img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+  }
+}
