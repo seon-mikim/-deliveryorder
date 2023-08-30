@@ -15,13 +15,29 @@
     width: 100%;
     border-bottom: 2px solid #c0c0c051;
   }
-  .menu-item__img-wrap {
-    width: 100px;
-    height: 100px;
-		> img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-		}
+  .menu-item__left-info {
+    display: flex;
+
+    .menu-item__img-wrap {
+      width: 100px;
+      height: 100px;
+      > img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .menu-item__name-price {
+      margin-left: 20px;
+      .menu-item__name {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 10px 0 30px 0;
+      }
+      .menu-item__price {
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
   }
 }
