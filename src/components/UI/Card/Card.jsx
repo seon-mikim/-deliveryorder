@@ -1,6 +1,13 @@
 import React from 'react';
 import classes from './Card.module.css';
+import Button from '../Button/Button';
 const Card = ({ menu }) => {
+	const handleClick = (event) => {
+		const { innerText } = event.target
+		console.log(innerText)
+		if(innerText === '+') return console.log('더하기버튼')
+		if(innerText === '-') return console.log('빼기버튼')
+	}
 	const koreaNumberFormat = new Intl.NumberFormat().format(menu.price);
   return (
     <li className={classes['menu-item']}>
@@ -15,9 +22,11 @@ const Card = ({ menu }) => {
           </div>
         </div>
       </div>
-      <div>
-        <span>수량</span>
+			<div className={classes['menu-item__amount'] }>
+				<div>수량</div>
+				<Button name='+' onClick={handleClick}/>
         <div>{menu.amount}</div>
+				<Button name ='-' onClick={handleClick}/>
       </div>
     </li>
   );
