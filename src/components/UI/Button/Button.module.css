@@ -1,0 +1,6 @@
+.header__modal-button--active {
+	border: 0.8rem solid transparent;
+	background-color: #20dcc9;
+	color: #f1f0f0;
+	font-weight: 600;
+}
