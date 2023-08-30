@@ -1,15 +1,24 @@
-import Header from "@components/Header/Header"
+import BackDrop from '@components/BackDrop/BackDrop';
+import Header from '@components/Header/Header';
+import Modal from '@components/Modal/Modal';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
+const backDropEl = document.getElementById('back-drop');
+const modalEl = document.getElementById('modal');
 
 const DeliveryOrderPage = () => {
-	const handleClick = () => {
-		console.log('누르면 모달창이 나올겁니다.')
-	}
-	return (
-    <div>
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = () => {
+    setIsShown((prevIsShown) => !prevIsShown);
+  };
+  return (
+    <>
+      {isShown && createPortal(<BackDrop onClick={handleClick} />, backDropEl)}
+      {isShown && createPortal(<Modal />, modalEl)}
       <Header onClick={handleClick} />
-    </div>
+    </>
   );
-}
+};
 
-export default DeliveryOrderPage
+export default DeliveryOrderPage;
