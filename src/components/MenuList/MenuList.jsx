@@ -1,12 +1,11 @@
-import Card from '@components/UI/Card/Card'
-import React from 'react'
+import Card from '@components/UI/Card/Card';
 
 const MenuList = () => {
-	return (
-		<ul>
-			<Card/>
-		</ul>
-	)
-}
+  return (
+    <ul>
+      <Card />
+    </ul>
+  );
+};
 
-export default MenuList
+export default MenuList;
