@@ -1,9 +1,19 @@
 .delivery-header {
-  margin: 2rem 3rem;
+  position: sticky;
+  padding: 2rem 3rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: #fffffe;
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: -8px;
+    width: 100vw;
+    border-bottom: 1px solid #c0c0c051;
+  }
   .header__text {
+    margin-right: 32rem;
     font-size: 2rem;
     color: #252525;
   }
