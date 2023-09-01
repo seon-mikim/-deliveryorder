@@ -13,13 +13,13 @@ import classes from './Button.module.css';
  * @returns JSX.Element
  */
 
-const Button = ({ name, className, onClick }) => {
+const Button = ({ name,title, className, onClick }) => {
   const handleClick = (event) => {
     onClick(event);
   };
   return (
     <button name={name} onClick={handleClick} className={classes[className]}>
-      {name}
+      {title ? title : <img className={classes[`${name}`]} src={`/images/${name}.svg`} alt={`${name}-icon`} name={name } />}
     </button>
   );
 };

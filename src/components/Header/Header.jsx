@@ -7,7 +7,8 @@ const Header = ({ onClick }) => {
       <h1 className={classes['header__text']}>Delivery Order</h1>
       <div>
         <Button
-          name="주문하기"
+          name="order"
+          title='주문하기'
           className="header__modal-button--active"
           onClick={onClick}
         />

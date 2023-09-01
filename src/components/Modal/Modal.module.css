@@ -1,6 +1,5 @@
 .modal {
   display: flex;
-	align-items: center;
 	justify-content: center;
 	border-radius: 0.4rem;
 	width: 58rem;
@@ -9,5 +8,6 @@
   top: calc(50vh - 300px);
   left: calc(50vw - 450px);
   background-color: #fff;
+	overflow-y: scroll;
 	z-index: 10;
 }
