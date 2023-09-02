@@ -1,6 +1,8 @@
 import React, { memo, useCallback, useState } from 'react';
 import classes from './Card.module.css';
 import Button from '../Button/Button';
+import LayoutWrapper from '../LayoutWrapper/LayoutWrapper';
+import CardItemTitle from './CardItemTitle';
 
 const Card = memo(({ menu, getAddOrderData, isModal }) => {
  
@@ -9,7 +11,10 @@ const Card = memo(({ menu, getAddOrderData, isModal }) => {
 
   return (
     <li className={classes['menu-item']}>
-      <div className={classes['menu-item__left-info']}>
+      <LayoutWrapper className={classes['menu-item__info']}> 
+        <CardItemTitle title={menu.menuName } />
+      </LayoutWrapper>
+      {/* <div className={classes['menu-item__left-info']}>
         <div className={classes['menu-item__img-wrap']}>
           <img src={`/images/${menu.menuName}.jpg`} alt={menu.menuName} />
         </div>
@@ -44,7 +49,7 @@ const Card = memo(({ menu, getAddOrderData, isModal }) => {
             <Button name="order-add" title="추가하기" />
           </div>
         )}
-      </div>
+      </div> */}
     </li>
   );
 })
