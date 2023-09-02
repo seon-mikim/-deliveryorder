@@ -2,18 +2,10 @@ import React, { memo, useCallback, useState } from 'react';
 import classes from './Card.module.css';
 import Button from '../Button/Button';
 
-const Card =memo( ({ menu, getAddOrderData, isModal }) => {
-  const [amount, setAmount] = useState(1);
+const Card = memo(({ menu, getAddOrderData, isModal }) => {
+ 
   const koreaNumberFormat = new Intl.NumberFormat().format(menu.price);
-console.log('render')
-  const handleClick = useCallback((event) => {
-    const { name } = event.target;
-    console.log(event.target);
-    if (name === 'add') return setAmount((prevAmount) => prevAmount + 1);
-    if (name === 'subtract' && amount >= 1)
-      return setAmount((prevAmount) => prevAmount - 1);
-    if (name === 'order-add') return getAddOrderData(menu);
-  },[amount, menu ,getAddOrderData]);
+  console.log('render');
 
   return (
     <li className={classes['menu-item']}>
@@ -36,26 +28,25 @@ console.log('render')
             <Button
               name="add"
               className="menu-item__amount-button--active"
-              onClick={handleClick}
+          
             />
-            <div className={classes['amount']}>{amount}</div>
+            <div className={classes['amount']}>1</div>
             <Button
               className="menu-item__amount-button--active"
               name="subtract"
-              onClick={handleClick}
             />
           </div>
         </div>
         {isModal ? (
-          <></>
+          ''
         ) : (
           <div>
-            <Button name="order-add" onClick={handleClick} title="추가하기" />
+            <Button name="order-add" title="추가하기" />
           </div>
         )}
       </div>
     </li>
   );
-});
+})
 
 export default Card;

@@ -1,13 +1,11 @@
 import Card from '@components/UI/Card/Card';
 import MENU_LIST from 'constants/MENU_LIST';
 import classes from './MenuList.module.css'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const MenuList = ({ getAddOrderData }) => {
-  const [menuListData, setMenuListData] = useState([])
-  useEffect(() => {
-    setMenuListData([...MENU_LIST])
-  },[])
+  const menuListData = [...MENU_LIST]
+ 
   return (
     <ul className={classes['main__menu-list']}>
       {menuListData.map((menu) => (
@@ -17,4 +15,4 @@ const MenuList = ({ getAddOrderData }) => {
   );
 };
 
-export default MenuList;
+export default React.memo(MenuList);

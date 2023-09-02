@@ -3,7 +3,7 @@ import classes from './MenuMain.module.css'
 const MenuMain = ({getAddOrderData }) => {
 	return (
     <main className={classes['main']}>
-      <MenuList getAddOrderData={getAddOrderData} />
+			<MenuList getAddOrderData={getAddOrderData } />
     </main>
   );
 }
