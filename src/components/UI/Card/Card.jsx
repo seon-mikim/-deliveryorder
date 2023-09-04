@@ -1,57 +1,55 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useEffect } from 'react';
 import classes from './Card.module.css';
 import Button from '../Button/Button';
 import LayoutWrapper from '../LayoutWrapper/LayoutWrapper';
 import CardItemTitle from './CardItemTitle';
+import CardItemImage from './CardItemImage';
+import CardItemPrice from './CardItemPrice';
+import CardItemCount from './CardItemCount';
+import CardItemAddProduct from './CardItemAddProduct';
 
-const Card = memo(({ menu, getAddOrderData, isModal }) => {
- 
-  const koreaNumberFormat = new Intl.NumberFormat().format(menu.price);
-  console.log('render');
+const Card = memo(({ menu, getAddOrderData, isModal, getTotal }) => {
+
+
 
   return (
     <li className={classes['menu-item']}>
-      <LayoutWrapper className={classes['menu-item__info']}> 
-        <CardItemTitle title={menu.menuName } />
+      <LayoutWrapper className={classes['menu-item__info']}>
+        <CardItemImage
+          className={classes['menu-item__img-wrap']}
+          menuName={menu.menuName}
+        />
+        </LayoutWrapper>
+        <LayoutWrapper className={classes['menu-item__name-price']}>
+          <CardItemTitle
+            className={classes['menu-item__name']}
+            title={menu.menuName}
+          />
+          <CardItemPrice
+          className={classes['menu-item__price']}
+          price={menu.price}
+         
+          />
       </LayoutWrapper>
-      {/* <div className={classes['menu-item__left-info']}>
-        <div className={classes['menu-item__img-wrap']}>
-          <img src={`/images/${menu.menuName}.jpg`} alt={menu.menuName} />
-        </div>
-        <div className={classes['menu-item__name-price']}>
-          <div className={classes['menu-item__name']}>{menu.menuName}</div>
-          <div className={classes['menu-item__price']}>
-            {koreaNumberFormat}
-            <span>원</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className={classes['menu-item__amount']}>
+      <LayoutWrapper>
+        <LayoutWrapper className={classes['menu-item__amount']}>
           <div className={classes['menu-item__amount__text']}>수량</div>
-          <div className={classes['menu-item__button-wrap']}>
-            <Button
-              name="add"
-              className="menu-item__amount-button--active"
-          
-            />
-            <div className={classes['amount']}>1</div>
-            <Button
-              className="menu-item__amount-button--active"
-              name="subtract"
-            />
-          </div>
-        </div>
-        {isModal ? (
-          ''
+          <CardItemCount price={menu.price} isModal={isModal} getTotal={getTotal} />
+        </LayoutWrapper>
+       
+          {isModal ? (
+            ''
         ) : (
-          <div>
-            <Button name="order-add" title="추가하기" />
-          </div>
-        )}
-      </div> */}
+            <>
+            <CardItemAddProduct
+              getAddOrderData={getAddOrderData}
+              menuId={menu.id}
+            />
+            </>
+          )}
+      </LayoutWrapper>
     </li>
   );
-})
+});
 
 export default Card;

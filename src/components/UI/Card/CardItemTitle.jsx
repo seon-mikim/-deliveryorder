@@ -1,7 +1,7 @@
 
 
 const CardItemTitle = ({ title, className }) => {
-	return <div>{title }</div>;
+	return <div className={className}>{title}</div>;
 };
 
 export default CardItemTitle;

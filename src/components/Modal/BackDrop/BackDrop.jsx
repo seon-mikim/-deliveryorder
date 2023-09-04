@@ -1,10 +1,9 @@
 
 import classes from './BackDrop.module.css';
 
-const BackDrop = () => {
+const BackDrop = ({ handleModalCloseClick }) => {
 
-;
-  return <div className={classes.background}></div>;
+  return <div onClick={handleModalCloseClick} className={classes.background}></div>;
 };
 
 export default BackDrop;

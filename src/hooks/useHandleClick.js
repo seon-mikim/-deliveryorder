@@ -2,9 +2,10 @@ import { useCallback } from 'react';
 
 
 const useHandleClick = () => {
-  const handleClick = useCallback((handler) => {
+  const handleClick = (handler) => {
+  
     handler && handler();
-  }, []);
+  }
   return { handleClick };
 };
 
