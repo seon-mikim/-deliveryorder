@@ -33,14 +33,54 @@
 
 .menu-item__add-order-button--add {
   border: 0.1rem solid transparent;
-  background-color: #20dcc9;
-  color: #f1f0f0;
+  background-color: #e3e7e7;
+  color: #0f0f0f;
   margin-left: 3.2rem;
   margin-top: 1rem;
   width: 6.8rem;
   height: 2rem;
   font-weight: 600;
   &:active {
+    background-color: #707171;
+  }
+}
+
+.modal__cancel-button {
+  border: 0.1rem solid transparent;
+  width: 6rem;
+  height: 3rem;
+  background-color: #e3e7e7;
+  color: #0f0f0f;
+  margin-top: 2rem;
+  margin-left: 39rem;
+  &:active {
+    background-color: #707171;
+  }
+}
+.modal__payment-button {
+  border: 0.1rem solid transparent;
+  width: 6rem;
+  height: 3rem;
+  background-color: #20dcc9;
+  color: #f1f0f0;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  &:active {
     background-color: #17968a;
+  }
+}
+
+.modal__close-button {
+  position: absolute;
+  border: 0.01rem solid transparent;
+  background-color: transparent;
+  color: #232323;
+  font-weight: 600;
+  right: 1rem;
+  top: 1rem;
+  .close {
+    width: 1.5rem;
+    font-weight: 600;
   }
 }

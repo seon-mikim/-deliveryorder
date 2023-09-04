@@ -1,6 +1,5 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import classes from './Card.module.css';
-import Button from '../Button/Button';
 import LayoutWrapper from '../LayoutWrapper/LayoutWrapper';
 import CardItemTitle from './CardItemTitle';
 import CardItemImage from './CardItemImage';
@@ -8,10 +7,7 @@ import CardItemPrice from './CardItemPrice';
 import CardItemCount from './CardItemCount';
 import CardItemAddProduct from './CardItemAddProduct';
 
-const Card = memo(({ menu, getAddOrderData, isModal, getTotal }) => {
-
-
-
+const Card = memo(({ menu, getAddOrderData, isModal,getTotalPrice}) => {
   return (
     <li className={classes['menu-item']}>
       <LayoutWrapper className={classes['menu-item__info']}>
@@ -19,34 +15,38 @@ const Card = memo(({ menu, getAddOrderData, isModal, getTotal }) => {
           className={classes['menu-item__img-wrap']}
           menuName={menu.menuName}
         />
-        </LayoutWrapper>
-        <LayoutWrapper className={classes['menu-item__name-price']}>
-          <CardItemTitle
-            className={classes['menu-item__name']}
-            title={menu.menuName}
-          />
-          <CardItemPrice
+      </LayoutWrapper>
+      <LayoutWrapper className={classes['menu-item__name-price']}>
+        <CardItemTitle
+          className={classes['menu-item__name']}
+          title={menu.menuName}
+        />
+        <CardItemPrice
           className={classes['menu-item__price']}
           price={menu.price}
-         
-          />
+        />
       </LayoutWrapper>
       <LayoutWrapper>
         <LayoutWrapper className={classes['menu-item__amount']}>
           <div className={classes['menu-item__amount__text']}>수량</div>
-          <CardItemCount price={menu.price} isModal={isModal} getTotal={getTotal} />
+          <CardItemCount
+            price={menu.price}
+            isModal={isModal}
+            menuId={menu.id}
+            getTotalPrice={getTotalPrice}
+           
+          />
         </LayoutWrapper>
-       
-          {isModal ? (
-            ''
+        {isModal ? (
+          ''
         ) : (
-            <>
+          <>
             <CardItemAddProduct
               getAddOrderData={getAddOrderData}
               menuId={menu.id}
             />
-            </>
-          )}
+          </>
+        )}
       </LayoutWrapper>
     </li>
   );
