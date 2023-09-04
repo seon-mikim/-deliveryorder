@@ -1,13 +1,29 @@
 .modal {
+	left: 0;
   display: flex;
-	justify-content: center;
-	border-radius: 0.4rem;
-	width: 58rem;
-	height: 40rem;
+  justify-content: center;
+  border-radius: 0.4rem;
+  width: 55.4rem;
+  height: 55rem;
   position: absolute;
-  top: calc(50vh - 300px);
-  left: calc(50vw - 450px);
+  top: calc(50vh - 400px);
+  left: calc(50vw - 444px);
   background-color: #fff;
-	overflow-y: auto;
-	z-index: 10;
+  overflow-y: auto;
+  z-index: 10;
+  padding-top: 3rem;
+	overflow-x: hidden;
+  .modal__amount-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: #a1a1a110;
+    width: 49rem;
+    height: 5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 2rem 1rem;
+  }
 }
