@@ -17,4 +17,22 @@
     font-size: 2rem;
     color: #252525;
   }
+  .header__button-wrap {
+    position: relative;
+    > span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #fb0a46;;
+    color: #fffffe;
+    border-radius: 50%;
+    }
+  }
 }

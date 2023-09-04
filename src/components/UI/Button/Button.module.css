@@ -1,19 +1,46 @@
 .header__modal-button--active {
-	border: 1rem solid transparent;
-	background-color: #20dcc9;
-	color: #f1f0f0;
-	font-weight: 600;
-	&:active {
-		background-color: #17968a;
-	}
+  border: 0.1rem solid transparent;
+  width: 6rem;
+  height: 3rem;
+  background-color: #20dcc9;
+  color: #f1f0f0;
+  font-weight: 600;
+  &:active {
+    background-color: #17968a;
+  }
 }
 
 .menu-item__amount-button--active {
-	border: 1rem solid transparent;
-	background-color: #f1f0f0;
-	color: #0202;
-	font-weight: 600;
-	&:active {
-		background-color:  #e3e3e3;
-	}
+  border: 0.01rem solid transparent;
+  padding: 0.3rem;
+  background-color: transparent;
+  color: #232323;
+  font-weight: 600;
+  &:active {
+    background-color: #e3e3e3;
+  }
+
+  .add {
+    width: 1rem;
+    font-weight: 600;
+  }
+
+  .subtract {
+    width: 1rem;
+    font-weight: 600;
+  }
+}
+
+.menu-item__add-order-button--add {
+  border: 0.1rem solid transparent;
+  background-color: #20dcc9;
+  color: #f1f0f0;
+  margin-left: 3.2rem;
+  margin-top: 1rem;
+  width: 6.8rem;
+  height: 2rem;
+  font-weight: 600;
+  &:active {
+    background-color: #17968a;
+  }
 }

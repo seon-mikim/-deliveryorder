@@ -1,4 +1,6 @@
+import { memo, useCallback } from 'react';
 import classes from './Button.module.css';
+import useHandleClick from 'hooks/useHandleClick';
 
 /**
  *
@@ -13,13 +15,28 @@ import classes from './Button.module.css';
  * @returns JSX.Element
  */
 
-const Button = ({ name, className, onClick }) => {
-  const handleClick = (event) => {
-    onClick(event);
+const Button = ({ name, title, className, handler }) => {
+ 
+  const { handleClick } = useHandleClick();
+  const handleButtonClick = () => {
+    handleClick(handler)
   };
+
   return (
-    <button name={name} onClick={handleClick} className={classes[className]}>
-      {name}
+    <button
+      name={name}
+      onClick={handleButtonClick}
+      className={classes[className]}
+    >
+      {title ? (
+        title
+      ) : (
+        <img
+          className={classes[`${name}`]}
+          src={`/images/${name}.svg`}
+          alt={`${name}-icon`}
+        />
+      )}
     </button>
   );
 };
